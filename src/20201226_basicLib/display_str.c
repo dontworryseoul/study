@@ -6,17 +6,17 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 15:22:33 by jso               #+#    #+#             */
-/*   Updated: 2020/12/26 15:34:50 by jso              ###   ########.fr       */
+/*   Updated: 2020/12/26 20:38:55 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	display_char(char ch);
+#include <unistd.h>
 
 void	display_str(char *str)
 {
 	while (*str)
 	{
-		display_char(*str);
+		write(1, str, 1);
 		str++;
 	}
 }

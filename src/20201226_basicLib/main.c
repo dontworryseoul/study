@@ -6,13 +6,13 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 15:07:44 by jso               #+#    #+#             */
-/*   Updated: 2020/12/26 20:42:25 by jso              ###   ########.fr       */
+/*   Updated: 2020/12/29 10:44:44 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void display_str(char *str);
+void	display_str	(char *str);
 
-int	main(void)
+int		main(void)
 {
 	display_str("Hello World\n");
 	return (0);

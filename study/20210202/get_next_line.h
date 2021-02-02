@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 11:26:55 by jso               #+#    #+#             */
-/*   Updated: 2021/02/02 11:28:30 by jso              ###   ########.fr       */
+/*   Updated: 2021/02/02 11:30:31 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,8 @@
  
 # include <unistd.h>
 # include <stdlib.h>
+# include <fcntl.h>
+# include <stdio.h>
+# include <fcntl.h>
 
 #endif

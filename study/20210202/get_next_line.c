@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 15:16:44 by jso               #+#    #+#             */
-/*   Updated: 2021/02/02 15:37:31 by jso              ###   ########.fr       */
+/*   Updated: 2021/02/02 16:57:00 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,14 @@
 int	get_next_line(int fd, char **line)
 {
 	char buf[10 + 1];
+	int	get_byte;
 
-	read(fd, buf, 10);
-	buf[10] = '\0';
-	*line = ft_strdup(buf);
+	*line = ft_strdup("");
+	while (get_byte = read(fd, buf, 10))
+	{
+		buf[get_byte] = '\0';
+		*line = ft_strjoin(*line, buf);
+	}
 	return (0);
 }
 
@@ -30,7 +34,8 @@ int main(void)
 	fd =  open("text.txt", O_RDONLY);
 	get_next_line(fd, &line);
 	printf("fd: %d\n", fd);
-	printf("buf: %s\n", line);
+	printf("%s", line);
+	free(line);
 	close(fd);
 	return (0);
 }

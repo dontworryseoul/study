@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 11:26:49 by jso               #+#    #+#             */
-/*   Updated: 2021/02/02 15:58:37 by jso              ###   ########.fr       */
+/*   Updated: 2021/02/02 17:29:59 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,16 @@ size_t	ft_strlen(const char *s)
 	while (*s++)
 		++i;
 	return (i);
+}
+
+char	*ft_strchr(const char *s, int c)
+{
+	while (42)
+	{
+		if (*s == c)
+			return ((char *)s);
+		if (*s == '\0')
+			return (NULL);
+		++s;
+	}
 }

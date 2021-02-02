@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 15:16:44 by jso               #+#    #+#             */
-/*   Updated: 2021/02/02 15:17:11 by jso              ###   ########.fr       */
+/*   Updated: 2021/02/02 15:37:31 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 int	get_next_line(int fd, char **line)
 {
+	char buf[10 + 1];
 
+	read(fd, buf, 10);
+	buf[10] = '\0';
+	*line = ft_strdup(buf);
+	return (0);
 }
 
 int main(void)
@@ -23,7 +28,9 @@ int main(void)
 	int fd;
 
 	fd =  open("text.txt", O_RDONLY);
-	printf("%d\n", fd);
+	get_next_line(fd, &line);
+	printf("fd: %d\n", fd);
+	printf("buf: %s\n", line);
 	close(fd);
 	return (0);
 }

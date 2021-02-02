@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 15:16:44 by jso               #+#    #+#             */
-/*   Updated: 2021/02/02 16:57:00 by jso              ###   ########.fr       */
+/*   Updated: 2021/02/02 17:28:51 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ int	get_next_line(int fd, char **line)
 	*line = ft_strdup("");
 	while (get_byte = read(fd, buf, 10))
 	{
+		if (ft_strchr(buf, '\n')
+		{
+			break ;
+		}
 		buf[get_byte] = '\0';
 		*line = ft_strjoin(*line, buf);
 	}

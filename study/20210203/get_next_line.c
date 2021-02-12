@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 20:05:03 by jso               #+#    #+#             */
-/*   Updated: 2021/02/04 00:15:43 by jso              ###   ########.fr       */
+/*   Updated: 2021/02/04 00:49:12 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,13 +101,13 @@ int	get_next_line(int fd, char **line)
 	flg = 1;
 	*line = "\0"; 
 	if (remainder)
-		*line = ft_strjoin(*line, remainder);
+		*line = ft_strdup(remainder);
 	else
-		*line = ft_strjoin(*line, "");
+		*line = ft_strdup("");
 	while (flg && (get_byte = read(fd, buf, BUFFER_SIZE)))
 	{
 		buf[BUFFER_SIZE] = '\0';
-		if (tmp_rtn = ft_strchr(buf, '\n'))
+		if ((tmp_rtn = ft_strchr(buf, '\n')))
 		{
 			*tmp_rtn = '\0';
 			flg = 0;
@@ -133,15 +133,9 @@ int main(void)
 	fd = open("../20210201/text.txt", O_RDONLY);
 	get_next_line(fd, &line);
 	printf("%s\n", line);
-	
-	get_next_line(fd, &line);
-	printf("%s\n", line);
-	
-	get_next_line(fd, &line);
-	printf("%s\n", line);
-	get_next_line(fd, &line);
-	printf("%s\n", line);
 
+	get_next_line(fd, &line);
+	printf("%s\n", line);
 	free(line);
 	close(fd);
 	system("leaks a.out > leaks_result_temp; cat leaks_result_temp | grep leaked && rm -rf leaks_result_temp");

@@ -1,4 +1,12 @@
-int main(void)
+#include <stdio.h>
+
+int	ft_printf(const char *format, ...)
 {
-	return (0);
+	int ret;
+	va_list ap;
+
+	ret = 0;
+	va_start(ap, format);
+	va_end(ap);
+	return (ret);
 }

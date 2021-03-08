@@ -6,7 +6,7 @@
 /*   By: jso </var/mail/jso>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 11:42:35 by jso               #+#    #+#             */
-/*   Updated: 2021/03/08 11:46:35 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/08 12:11:20 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# int	ft_printf(const char *str, ...);
+
+typedef struct		s_flags
+{
+	int				ret;
+}					t_flags
+
+int	ft_printf(const char *str, ...);
 
 #endif

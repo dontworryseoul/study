@@ -6,9 +6,9 @@ int main(void)
     int num = 0;
 
     ft_printf("\n");
-    num = ft_printf("Hello%cworld",'+');
+    num = ft_printf("Hello%sworld","+and+");
     ft_printf("\n\n=======");
-    ft_printf("\nstring printing good");
+    ft_printf("\nstring printing succeed");
     ft_printf("\n=======");
     ft_printf("\n");
     printf("num : %d\n", num);

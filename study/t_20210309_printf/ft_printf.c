@@ -6,7 +6,11 @@ void	print_s(va_list ap, t_flags *flags)
 	char *str;
 
 	str = va_arg(ap, char *);
-
+	while (*str)
+	{
+		write(1, str++, 1);
+		++flags->ret;
+	}
 }
 
 void	print_c(va_list ap, t_flags *flags)
@@ -24,6 +28,8 @@ void	printf_all(va_list ap, t_flags *flags)
 		print_c(ap, flags);
 	else if (flags->type == 's')
 		print_s(ap, flags);
+	else if (flags->type == '%')
+		print_percent(ap, flags);
 }
 
 void	check_type(const char **fmt, t_flags *flags)

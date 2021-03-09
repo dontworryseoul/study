@@ -3,6 +3,9 @@
 
 int main(void)
 {
-    ft_printf("Hello world");
+    int num = 0;
+    num = ft_printf("Hello world");
+    printf("\n");
+    printf("num : %d", num);
     return (0);
 }

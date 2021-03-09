@@ -1,16 +1,26 @@
 #include "ft_printf.h"
+#include <stdio.h>
 
-void printf_rst(va_list ap, char *fmt, t_flags *flags)
+void    checker(va_list ap, const char **fmt,  t_flags *flags)
 {
-    while (*fmt)
+
+}
+
+void printf_rst(va_list ap, const char **fmt, t_flags *flags)
+{
+    while (**fmt != '\0')
     {
-        if (*fmt != '%')
-        {
-            write(1, fmt, 1);
+        // if (*fmt == '%')
+        // {
+        //     ++fmt;
+        //     checker(ap, &fmt, flags);
+        // }
+        // else
+        // {
+            write(1, *fmt, 1);
             flags->ret++;
-        }
-        else
-            checker(ap, &(++fmt), flags);
+        // }
+        ++*fmt;
     }
 }
 
@@ -18,10 +28,11 @@ int ft_printf(const char *format, ...)
 {
     t_flags *flags;
     va_list ap;
-
+    char *fff = "aaahhh\n";
     flags->ret = 0;
     va_start(ap, format);
-    printf_rst(ap, format, flags);
+    printf_rst(ap, &format, flags);
+    printf("ft_printf: |%s|\n", format);
     va_end(ap);
-    retrun (flags->ret);
+    return (flags->ret);
 }

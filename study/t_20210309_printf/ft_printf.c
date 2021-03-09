@@ -28,11 +28,11 @@ int ft_printf(const char *format, ...)
 {
     t_flags *flags;
     va_list ap;
-    char *fff = "aaahhh\n";
+
     flags->ret = 0;
     va_start(ap, format);
     printf_rst(ap, &format, flags);
-    printf("ft_printf: |%s|\n", format);
+    //printf("ft_printf: |%s|\n", format);
     va_end(ap);
     return (flags->ret);
 }

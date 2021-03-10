@@ -7,9 +7,12 @@
 
 typedef	struct	s_flags
 {
+	int			left;
+	int			zero;
+	int			precision;
+	int			width;
 	int			ret;
-	int			type;
-	char		*string;
+	char		type;
 }				t_flags;
 
 int				ft_printf(const char *format, ...);

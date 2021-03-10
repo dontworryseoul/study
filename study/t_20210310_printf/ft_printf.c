@@ -1,12 +1,11 @@
 #include "ft_printf.h"
 
-static void init_flag(t_flags *flags)
+static void init_struct(t_flags *flags)
 {
 	flags->left = 0;
 	flags->zero = 0;
 	flags->precision = 0;
 	flags->width = 0;
-	flags->ret = 0;
 	flags->type = 0;
 }
 
@@ -15,22 +14,29 @@ static void check_type(const char **fmt, t_flags *flags)
 	if (**fmt == 'c' || **fmt == 's' || **fmt == '%' ||
 			**fmt == 'p' || **fmt == 'd' || **fmt == 'i' ||
 			**fmt == 'u' || **fmt == 'x' || **fmt == 'X')
-	{
 		flags->type = **fmt;
-		++*fmt;
-	}
+}
+
+static void print_c(va_list ap, t_flags *flags)
+{
+	char ch;
+
+	ch = va_arg(ap, int);
+	write(1, &ch, 1);
+	flags->ret++;
 }
 
 static void  print_all(va_list ap, t_flags *flags)
 {
-	if (flags->type == 'c)
-		print_c(ap);
+	if (flags->type == 'c')
+		print_c(ap, flags);
 }
 
 static void check_fmt(va_list ap, const char **fmt, t_flags *flags)
 {
-	init_flag(flags);
-	check_type(&fmt, flags);
+	++*fmt;
+	init_struct(flags);
+	check_type(fmt, flags);
 	print_all(ap, flags);
 }
 
@@ -43,7 +49,7 @@ static void print_rst(va_list ap, const char *fmt, t_flags *flags)
 		else
 		{
 			write(1, fmt, 1);
-			++flags->ret;
+			flags->ret++;
 		}
 	++fmt;
 	}

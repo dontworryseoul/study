@@ -10,10 +10,18 @@ static void init_flag(t_flags *flags)
 	flags->type = 0;
 }
 
+static check_type(const char **fmt, t_flags *flags)
+{
+	if (**fmt == 'c' || **fmt == 's' || **fmt == '%'
+			|| **fmt == 'p' || **fmt == 'd' || **fmt == 'i'
+			|| **fmt == 'u' || **fmt == 'x' || **fmt == 'X')
+		flags->type = **fmt;
+}
+
 static void check_fmt(va_list ap, const char **fmt, t_flags *flags)
 {
 	init_flag(flags);
-	check_fmt(ap, *fmt);
+	check_type(&fmt, flags);
 	print_all(ap);
 }
 

@@ -12,6 +12,6 @@ typedef	struct	s_flags
 	char		*string;
 }				t_flags;
 
-int				ft_printf(const char *format);
+int				ft_printf(const char *format, ...);
 
 #endif

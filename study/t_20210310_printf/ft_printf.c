@@ -13,6 +13,8 @@ static void init_flag(t_flags *flags)
 static void check_fmt(va_list ap, const char **fmt, t_flags *flags)
 {
 	init_flag(flags);
+	check_fmt(ap, *fmt);
+	print_all(ap);
 }
 
 static void print_rst(va_list ap, const char *fmt, t_flags *flags)

@@ -1,31 +1,6 @@
 #include "ft_printf.h"
 
-static void	init_struct(t_flags *flags)
-{
-	flags->left = 0;
-	flags->zero = 0;
-	flags->precision = 0;
-	flags->dot = 0;
-	flags->width = 0;
-	flags->type = 0;
-	flags->padding_byte = 0;
-}
-
-static void	check_type(const char **f, t_flags *flags)
-{
-	if (**f == 'c' ||
-			**f == 's' ||
-			**f == '%' ||
-			**f == 'p' ||
-			**f == 'd' ||
-			**f == 'i' ||
-			**f == 'u' ||
-			**f == 'x' ||
-			**f == 'X')
-		flags->type = **f;
-}
-
-static void printf_padding(int byte, t_flags *flags)
+void printf_padding(int byte, t_flags *flags)
 {
 	char 	padding_char;
 	int		i;
@@ -42,7 +17,7 @@ static void printf_padding(int byte, t_flags *flags)
 	}
 }
 
-static void	printf_char(va_list ap, t_flags *flags)
+void	printf_char(va_list ap, t_flags *flags)
 {
 	char ch;
 
@@ -61,13 +36,19 @@ static void	printf_char(va_list ap, t_flags *flags)
 	}
 }
 
-static void	printf_all(va_list ap, t_flags *flags)
+void	init_struct(t_flags *flags)
 {
-	if (flags->width < 0)
-	{
-		flags->left = 1;
-		flags->width *= -1;
-	}
+	flags->left = 0;
+	flags->zero = 0;
+	flags->precision = 0;
+	flags->dot = 0;
+	flags->width = 0;
+	flags->type = 0;
+	flags->padding_byte = 0;
+}
+
+void	ft_printf_all(va_list ap, t_flags *flags)
+{
 	if (flags->type == 'c')
 		printf_char(ap, flags);
 	/*
@@ -80,77 +61,17 @@ static void	printf_all(va_list ap, t_flags *flags)
 	*/
 }
 
-static void	ft_check_flag(const char **fmt, t_flags *flags)
-{
-	while (**fmt == '-' || **fmt == '0')
-	{
-		if (**fmt == '-')
-			flags->left = 1;
-		else 
-			flags->zero = 1;
-		++*fmt;
-	}
-}
-
-static void	ft_check_width(va_list ap, const char **fmt, t_flags *flags)
-{
-	if (**fmt == '*' || (**fmt >= '0' && **fmt <= '9'))
-	{
-		if (**fmt == '*')
-		{
-			flags->width = va_arg(ap, int);
-			++*fmt;
-		}
-		else if (**fmt >= '0' && **fmt <= '9')
-		{
-			while (**fmt >= '0' && **fmt <= '9')
-			{
-				flags->width = (flags->width * 10) + (**fmt - '0');
-				++*fmt;
-			}
-		}
-	}
-}
-
-static void ft_check_precision(va_list ap, const char **fmt, t_flags *flags)
-{
-	if (**fmt == '.')
-	{
-		++*fmt;
-		flags->dot = 1; 
-		if (**fmt == '*')
-		{
-			flags->precision = va_arg(ap, int);
-			++*fmt;
-		}
-		else if (**fmt >= '0' && **fmt <= '9')
-		{
-			while (**fmt >= '0' && **fmt <= '9')
-			{
-				flags->precision = (flags->precision * 10) + (**fmt - '0');
-				++*fmt;
-			}
-		}
-	}
-}
-
-static void	ft_check_format(va_list ap, const char **fmt, t_flags *flags)
-{
-	++*fmt;
-	init_struct(flags);
-	ft_check_flag(fmt, flags);
-	ft_check_width(ap, fmt, flags);
-	ft_check_precision(ap, fmt, flags);
-	check_type(fmt, flags);
-	printf_all(ap, flags);
-}
-
-static void	printf_rst(va_list ap, const char *fmt, t_flags *flags)
+void	printf_rst(va_list ap, const char *fmt, t_flags *flags)
 {
 	while (*fmt)
 	{
 		if (*fmt == '%')
+		{
+			++fmt;
+			init_struct(flags);
 			ft_check_format(ap, &fmt, flags);
+			ft_printf_all(ap, flags);
+		}
 		else
 		{
 			write(1, fmt, 1);

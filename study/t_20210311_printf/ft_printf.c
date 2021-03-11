@@ -36,19 +36,41 @@ static void	printf_all(va_list ap, t_flags *flags)
 {
 	if (flags->type == 'c')
 		printf_char(ap, flags);
+	/*
 	else if (flags->type == 's')
 		printf_string(ap, flags);
 	else if (flags->type == 'd')
 		printf_deciaml(ap, flags);
 	else if (flags->type == '%')
 		printf_percent(ap, flags);
+		*/
+}
+
+static void	printf_check_flag(va_list ap, const char **fmt, t_flags *flags)
+{
+	while (**fmt == '-' || **fmt == '0')
+	{
+		if (**fmt == '-')
+			flags->left = 1;
+		else 
+			flags->zero = 1;
+		++*fmt;
+	}
+}
+
+static void	printf_check_width(va_list ap, const char **fmt)
+{
+}
+
+static void printf_check_precision(va_list ap, const char **fmt)
+{
 }
 
 static void	printf_check_format(va_list ap, const char **fmt, t_flags *flags)
 {
 	++*fmt;
 	init_struct(flags);
-	printf_check_flag(ap, fmt);
+	printf_check_flag(ap, fmt, flags);
 	printf_check_width(ap, fmt);
 	printf_check_precision(ap, fmt);
 	check_type(fmt, flags);

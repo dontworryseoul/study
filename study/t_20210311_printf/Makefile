@@ -5,7 +5,7 @@ RM		= rm -f
 NAME	= libftprintf.a
 INC		= .ft_printf.h
 
-MEM		= ft_printf.c
+MEM		= ft_printf.c ft_check_format.c
 
 OBJ_MEM	= $(MEM:.c=.o)
 

@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-static void init_struct(t_flags *flags)
+static void	init_struct(t_flags *flags)
 {
 	flags->left = 0;
 	flags->zero = 0;
@@ -23,7 +23,7 @@ static void	check_type(const char **f, t_flags *flags)
 		flags->type = **f;
 }
 
-static void printf_char(va_list ap, t_flags *flags)
+static void	printf_char(va_list ap, t_flags *flags)
 {
 	char ch;
 
@@ -36,12 +36,21 @@ static void	printf_all(va_list ap, t_flags *flags)
 {
 	if (flags->type == 'c')
 		printf_char(ap, flags);
+	else if (flags->type == 's')
+		printf_string(ap, flags);
+	else if (flags->type == 'd')
+		printf_deciaml(ap, flags);
+	else if (flags->type == '%')
+		printf_percent(ap, flags);
 }
 
-static void printf_check_format(va_list ap, const char **fmt, t_flags *flags)
+static void	printf_check_format(va_list ap, const char **fmt, t_flags *flags)
 {
 	++*fmt;
 	init_struct(flags);
+	printf_check_flag(ap, fmt);
+	printf_check_width(ap, fmt);
+	printf_check_precision(ap, fmt);
 	check_type(fmt, flags);
 	printf_all(ap, flags);
 }
@@ -57,7 +66,7 @@ static void	printf_rst(va_list ap, const char *fmt, t_flags *flags)
 			write(1, fmt, 1);
 			flags->ret_value++;
 		}
-	++fmt;
+		++fmt;
 	}
 }
 

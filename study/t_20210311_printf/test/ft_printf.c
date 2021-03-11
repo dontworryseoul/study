@@ -35,7 +35,7 @@ static void printf_padding(int byte, t_flags *flags)
 	flags->padding_byte = flags->width - byte;
 	if (flags->zero == 1 && flags->type == '%' && flags->left == 0)
 		padding_char = '0';
-	while (flags->padding_byte-- > 0)
+	while (flags->padding_byte--)
 	{
 		write(1, &padding_char, 1);
 		flags->ret_value++;
@@ -53,21 +53,10 @@ static void	printf_char(va_list ap, t_flags *flags)
 		flags->ret_value++;
 		printf_padding(1, flags);
 	}
-	else
-	{
-		printf_padding(1, flags);
-		write(1, &ch, 1);
-		flags->ret_value++;
-	}
 }
 
 static void	printf_all(va_list ap, t_flags *flags)
 {
-	if (flags->width < 0)
-	{
-		flags->left = 1;
-		flags->width *= -1;
-	}
 	if (flags->type == 'c')
 		printf_char(ap, flags);
 	/*
@@ -77,7 +66,7 @@ static void	printf_all(va_list ap, t_flags *flags)
 		printf_deciaml(ap, flags);
 	else if (flags->type == '%')
 		printf_percent(ap, flags);
-	*/
+		*/
 }
 
 static void	ft_check_flag(const char **fmt, t_flags *flags)

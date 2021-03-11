@@ -1,7 +1,49 @@
 #include "ft_printf.h"
 
+static void init_struct(t_flags *flags)
+{
+	flags->left = 0;
+	flags->zero = 0;
+	flags->precision = 0;
+	flags->width = 0;
+	flags->type = 0;
+}
+
+static void	check_type(const char **f, t_flags *flags)
+{
+	if (**f == 'c' ||
+			**f == 's' ||
+			**f == '%' ||
+			**f == 'p' ||
+			**f == 'd' ||
+			**f == 'i' ||
+			**f == 'u' ||
+			**f == 'x' ||
+			**f == 'X')
+		flags->type = **f;
+}
+
+static void printf_char(va_list ap, t_flags *flags)
+{
+	char ch;
+
+	ch = va_arg(ap, int);
+	write(1, &ch, 1);
+	flags->ret_value++;
+}
+
+static void	printf_all(va_list ap, t_flags *flags)
+{
+	if (flags->type == 'c')
+		printf_char(ap, flags);
+}
+
 static void printf_check_format(va_list ap, const char **fmt, t_flags *flags)
 {
+	++*fmt;
+	init_struct(flags);
+	check_type(fmt, flags);
+	printf_all(ap, flags);
 }
 
 static void	printf_rst(va_list ap, const char *fmt, t_flags *flags)

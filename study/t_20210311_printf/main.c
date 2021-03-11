@@ -8,7 +8,7 @@ int main(void)
 	
 	while (i--)
 	{
-		ret = ft_printf("Hello World", '+');
+		ret = ft_printf("Hello%cWorld", '+');
 		printf("\n");
 		printf("return value : %d", ret);
 		printf("\n");

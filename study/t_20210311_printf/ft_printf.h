@@ -10,9 +10,10 @@ typedef struct	s_flags
 	int			left;
 	int			zero;
 	int			precision;
+	int			dot;
 	int			width;
 	int			ret_value;
-	int			empty_padding_byte;
+	int			padding_byte;
 	char		type;
 }				t_flags;
 

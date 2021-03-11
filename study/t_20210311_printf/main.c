@@ -9,7 +9,7 @@ int main(void)
 	while (i--)
 	{
 		//ret = ft_printf("Hello%-5cWorld", '+');
-		ret = ft_printf("|hello%-5cworld|", '+');
+		ret = ft_printf("|hello%5.*cworld|", 10, '+');
 		printf("\n");
 		printf("0123456789\n");
 		printf("return value : %d", ret);

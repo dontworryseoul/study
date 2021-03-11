@@ -8,11 +8,11 @@ int main(void)
 	
 	while (i--)
 	{
-		ret = ft_printf("Hello%cWorld", '+');
+		ret = ft_printf("Hello World", '+');
 		printf("\n");
 		printf("return value : %d", ret);
 		printf("\n");
 		printf("\n");
 	}
-	return (0):
+	return (0);
 }

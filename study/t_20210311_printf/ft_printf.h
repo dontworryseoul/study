@@ -1,5 +1,5 @@
 #ifndef FT_PRINTF_H
-# define FT_PRINFT_H
+# define FT_PRINTF_H
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -11,7 +11,7 @@ typedef struct	s_flags
 	int			zero;
 	int			precision;
 	int			width;
-	int			ret;
+	int			ret_value;
 	char		type;
 }				t_flags;
 

@@ -69,7 +69,7 @@ static void	printf_all(va_list ap, t_flags *flags)
 		*/
 }
 
-static void	ft_check_flag(va_list ap, const char **fmt, t_flags *flags)
+static void	ft_check_flag(const char **fmt, t_flags *flags)
 {
 	while (**fmt == '-' || **fmt == '0')
 	{
@@ -127,7 +127,7 @@ static void	ft_check_format(va_list ap, const char **fmt, t_flags *flags)
 {
 	++*fmt;
 	init_struct(flags);
-	ft_check_flag(ap, fmt, flags);
+	ft_check_flag(fmt, flags);
 	ft_check_width(ap, fmt, flags);
 	ft_check_precision(ap, fmt, flags);
 	check_type(fmt, flags);

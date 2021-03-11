@@ -8,8 +8,10 @@ int main(void)
 	
 	while (i--)
 	{
-		ret = ft_printf("Hello%cWorld", '+');
+		//ret = ft_printf("Hello%-5cWorld", '+');
+		ret = ft_printf("|hello%-5cworld|", '+');
 		printf("\n");
+		printf("0123456789\n");
 		printf("return value : %d", ret);
 		printf("\n");
 		printf("\n");

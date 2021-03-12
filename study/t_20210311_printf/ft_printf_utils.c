@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/12 21:09:51 by jso               #+#    #+#             */
+/*   Updated: 2021/03/12 21:09:52 by jso              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-void printf_padding(int byte, t_flags *flags)
+void	ft_printf_padding(int byte, t_flags *flags)
 {
 	char 	padding_char;
 	int		i;
@@ -15,4 +27,14 @@ void printf_padding(int byte, t_flags *flags)
 		write(1, &padding_char, 1);
 		flags->ret_value++;
 	}
+}
+
+int		ft_strlen(const char *str)	
+{
+	unsigned int	i;
+
+	i = 0;
+	while (*str)
+		++i;
+	return (i);
 }

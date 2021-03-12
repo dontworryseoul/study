@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_check_format.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/12 20:49:39 by jso               #+#    #+#             */
+/*   Updated: 2021/03/12 13:37:41 by jso              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 void	ft_check_flag(const char **fmt, t_flags *flags)
@@ -37,7 +49,7 @@ void	ft_check_width(va_list ap, const char **fmt, t_flags *flags)
 	}
 }
 
-void ft_check_precs(va_list ap, const char **fmt, t_flags *flags)
+void	ft_check_precs(va_list ap, const char **fmt, t_flags *flags)
 {
 	if (**fmt == '.')
 	{

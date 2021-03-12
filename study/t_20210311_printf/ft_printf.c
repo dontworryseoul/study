@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/12 20:49:26 by jso               #+#    #+#             */
+/*   Updated: 2021/03/12 13:22:07 by jso              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 void	ft_init_struct(t_flags *flags)
@@ -15,9 +27,9 @@ void	ft_printf_all(va_list ap, t_flags *flags)
 {
 	if (flags->type == 'c')
 		ft_printf_char(ap, flags);
-	/*
 	else if (flags->type == 's')
-		printf_string(ap, flags);
+		ft_printf_str(ap, flags);
+	/*
 	else if (flags->type == 'd')
 		printf_deciaml(ap, flags);
 	else if (flags->type == '%')
@@ -45,7 +57,7 @@ void	ft_printf_rst(va_list ap, const char *fmt, t_flags *flags)
 	}
 }
 
-int			ft_printf(const char *format, ...)
+int		ft_printf(const char *format, ...)
 {
 	t_flags *flags;
 	va_list ap;

@@ -17,7 +17,7 @@ typedef struct	s_flags
 	char		type;
 }				t_flags;
 
-int				ft_printf(const char *format, ...);
+int			ft_printf(const char *format, ...);
 void		printf_rst(va_list ap, const char *fmt, t_flags *flags);
 void		ft_printf_all(va_list ap, t_flags *flags);
 void		init_struct(t_flags *flags);

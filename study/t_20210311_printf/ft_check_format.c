@@ -28,11 +28,11 @@ void	ft_check_width(va_list ap, const char **fmt, t_flags *flags)
 				flags->width = (flags->width * 10) + (**fmt - '0');
 				++*fmt;
 			}
-			if (flags->width < 0)
-			{
-				flags->left = 1;
-				flags->width *= -1;
-			}
+		}
+		if (flags->width < 0)
+		{
+			flags->left = 1;
+			flags->width *= -1;
 		}
 	}
 }

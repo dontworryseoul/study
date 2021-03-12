@@ -1,4 +1,4 @@
-#include "ft_printf.c"
+#include "ft_printf.h"
 
 void printf_padding(int byte, t_flags *flags)
 {

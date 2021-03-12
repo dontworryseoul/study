@@ -1,23 +1,6 @@
 #include "ft_printf.h"
 
-void printf_padding(int byte, t_flags *flags)
-{
-	char 	padding_char;
-	int		i;
-
-	padding_char = ' ';
-	i = 0;
-	flags->padding_byte = flags->width - byte;
-	if (flags->zero == 1 && flags->type == '%' && flags->left == 0)
-		padding_char = '0';
-	while (flags->padding_byte-- > 0)
-	{
-		write(1, &padding_char, 1);
-		flags->ret_value++;
-	}
-}
-
-void	init_struct(t_flags *flags)
+void	ft_init_struct(t_flags *flags)
 {
 	flags->left = 0;
 	flags->zero = 0;
@@ -31,7 +14,7 @@ void	init_struct(t_flags *flags)
 void	ft_printf_all(va_list ap, t_flags *flags)
 {
 	if (flags->type == 'c')
-		printf_char(ap, flags);
+		ft_printf_char(ap, flags);
 	/*
 	else if (flags->type == 's')
 		printf_string(ap, flags);
@@ -42,14 +25,14 @@ void	ft_printf_all(va_list ap, t_flags *flags)
 	*/
 }
 
-void	printf_rst(va_list ap, const char *fmt, t_flags *flags)
+void	ft_printf_rst(va_list ap, const char *fmt, t_flags *flags)
 {
 	while (*fmt)
 	{
 		if (*fmt == '%')
 		{
 			++fmt;
-			init_struct(flags);
+			ft_init_struct(flags);
 			ft_check_format(ap, &fmt, flags);
 			ft_printf_all(ap, flags);
 		}
@@ -70,7 +53,7 @@ int			ft_printf(const char *format, ...)
 	flags = malloc(sizeof(t_flags));
 	flags->ret_value = 0;
 	va_start(ap, format);
-	printf_rst(ap, format, flags);
+	ft_printf_rst(ap, format, flags);
 	va_end(ap);
 	free(flags);
 	return (flags->ret_value);

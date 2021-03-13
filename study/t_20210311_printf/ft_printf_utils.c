@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 21:09:51 by jso               #+#    #+#             */
-/*   Updated: 2021/03/12 21:09:52 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/12 17:04:44 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		ft_strlen(const char *str)
 	unsigned int	i;
 
 	i = 0;
-	while (*str)
+	while (*str++)
 		++i;
 	return (i);
 }

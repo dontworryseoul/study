@@ -3,18 +3,24 @@
 
 int main(void)
 {
-	int ret;
-	int i = 2;
-	
-	while (i--)
-	{
-		//ret = ft_printf("Hello%-5cWorld", '+');
-		ret = ft_printf("|%s|", "Hello");
-		printf("\n");
-		printf("0123456789\n");
-		printf("return value : %d", ret);
-		printf("\n");
-		printf("\n");
-	}
-	return (0);
+ft_printf("%s\n", "abcde");
+ft_printf("%s\n", "");
+ft_printf("%s\n", NULL);
+ft_printf("%-s\n", "abcde");
+ft_printf("%3s\n", "abcde");
+ft_printf("%-3s\n", "abcde");
+ft_printf("%7s\n", "abcde");
+ft_printf("%-7s\n", "abcde");
+ft_printf("%*s\n", 7, "abcde");
+ft_printf("%*s\n", 0, "abcde");
+ft_printf("%*s\n", -7, "abcde");
+ft_printf("%.0s\n", "abcde");
+ft_printf("%.s\n", "abcde");
+ft_printf("%.3s\n", "abcde");
+ft_printf("%.7s\n", "abcde");
+ft_printf("%3.7s\n", "abcde");
+ft_printf("%7.3s\n", "abcde");
+ft_printf("%7.9s\n", "abcde");
+ft_printf("%7.3s\n", NULL);
+return (0);
 }

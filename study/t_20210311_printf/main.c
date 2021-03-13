@@ -3,24 +3,70 @@
 
 int main(void)
 {
-ft_printf("%s\n", "abcde");
-ft_printf("%s\n", "");
-ft_printf("%s\n", NULL);
-ft_printf("%-s\n", "abcde");
-ft_printf("%3s\n", "abcde");
-ft_printf("%-3s\n", "abcde");
-ft_printf("%7s\n", "abcde");
-ft_printf("%-7s\n", "abcde");
-ft_printf("%*s\n", 7, "abcde");
-ft_printf("%*s\n", 0, "abcde");
-ft_printf("%*s\n", -7, "abcde");
-ft_printf("%.0s\n", "abcde");
-ft_printf("%.s\n", "abcde");
-ft_printf("%.3s\n", "abcde");
-ft_printf("%.7s\n", "abcde");
-ft_printf("%3.7s\n", "abcde");
-ft_printf("%7.3s\n", "abcde");
-ft_printf("%7.9s\n", "abcde");
-ft_printf("%7.3s\n", NULL);
+ft_printf("%%");
+	//	result : |%|
+//		return : 1
+printf("\n");
+ft_printf("%5%");
+//		result : |    %|
+	//	return : 5
+printf("\n");
+ft_printf("%-5%");
+		//result : |%    |
+//		return : 5
+printf("\n");
+ft_printf("%-%");
+	//	result : |%|
+	//	return : 1
+printf("\n");
+ft_printf("%*%", 5);
+	//	result : |    %|
+	//	return : 5
+printf("\n");
+ft_printf("%*%", -5);
+	//	result : |%    |
+	//	return : 5
+printf("\n");
+ft_printf("%.5%");
+	//	result : |%|
+	//	return : 1
+printf("\n");
+//ft_printf("%.-5%");
+	//	warning : invalid conversion specifier '-'
+ft_printf("%.*%", -5);
+	//	result : |%|
+	//	return : 1
+printf("\n");
+ft_printf("%.%");
+		//result : |%|
+	//	return : 1
+printf("\n");
+ft_printf("%.0%");
+	//	result : |%|
+	//	return : 1
+printf("\n");
+ft_printf("%05%");
+	//	result : |0000%|
+	//	return : 5
+printf("\n");
+ft_printf("%-05%");
+	//	result : |%    |
+	//	return : 5
+/*
+ft_printf("% %");
+	//	result : |%|
+	//	return : 1
+printf("\n");
+ft_printf("% 05%");
+	//	result : |0000%|
+	//	return : 5
+
+ft_printf("%#5%");
+	//	result : |    %|
+	//	return : 5
+ft_printf("%+5%");
+	//	result : |    %|
+	//	return : 5
+*/
 return (0);
 }

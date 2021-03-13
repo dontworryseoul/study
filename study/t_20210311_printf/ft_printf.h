@@ -31,6 +31,7 @@ void		ft_check_flag(const char **fmt, t_flags *flags);
 
 void		ft_printf_char(va_list ap, t_flags *flags);
 void		ft_printf_str(va_list ap, t_flags *flags);
+void		ft_printf_per(t_flags *flags);
 
 void		ft_printf_padding(int byte, t_flags *flags);
 int			ft_strlen(const char *str);

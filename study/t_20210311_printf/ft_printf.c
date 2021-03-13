@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 20:49:26 by jso               #+#    #+#             */
-/*   Updated: 2021/03/12 17:01:50 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/14 03:26:30 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ void	ft_printf_all(va_list ap, t_flags *flags)
 		ft_printf_char(ap, flags);
 	else if (flags->type == 's')
 		ft_printf_str(ap, flags);
+	else if (flags->type == '%')
+		ft_printf_per(flags);
 	/*
 	else if (flags->type == 'd')
 		printf_deciaml(ap, flags);
-	else if (flags->type == '%')
-		printf_percent(ap, flags);
 	*/
 }
 

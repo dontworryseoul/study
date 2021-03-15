@@ -36,5 +36,6 @@ void		ft_printf_dec(va_list ap, t_flags *flags);
 
 void		ft_printf_padding(int byte, t_flags *flags);
 int			ft_strlen(const char *str);
+int			ft_num_len(int num);
 
 #endif

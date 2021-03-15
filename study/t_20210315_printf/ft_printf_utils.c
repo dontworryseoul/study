@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 21:09:51 by jso               #+#    #+#             */
-/*   Updated: 2021/03/12 17:04:44 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/16 02:14:42 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,24 @@ int		ft_strlen(const char *str)
 		++i;
 	return (i);
 }
+
+int	ft_num_len(int num)
+{
+	int res_len;
+
+	res_len = 0;
+	if (num == 1 << 31)
+		return (11);
+	if (0 > num)
+	{
+		num = num * -1;
+		++res_len;
+	}
+	while (0 < num)
+	{
+		num = num / 10;
+		++res_len;
+	}
+	return (res_len);
+}
+

@@ -6,8 +6,9 @@ NAME	=	libftprintf.a
 INC		=	.ft_printf.h
 
 MEM		=	ft_printf.c ft_check_format.c ft_printf_utils.c \
-			ft_printf_char.c ft_printf_str.c ft_printf_per.c
-
+			ft_printf_char.c ft_printf_str.c ft_printf_per.c \
+			ft_printf_dec.c \
+			ft_printf_utils.c
 OBJ_MEM	= $(MEM:.c=.o)
 
 .c.o:

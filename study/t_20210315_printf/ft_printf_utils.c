@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 21:09:51 by jso               #+#    #+#             */
-/*   Updated: 2021/03/16 02:14:42 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/15 22:47:08 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	ft_printf_padding(int byte, t_flags *flags)
 
 	padding_char = ' ';
 	i = 0;
-	flags->padding_byte = flags->width - byte;
+	if (flags->width >= byte)
+		flags->padding_byte = flags->width - byte;
 	if (flags->zero == 1 && flags->type == '%' && flags->left == 0)
 		padding_char = '0';
 	while (flags->padding_byte-- > 0)
@@ -41,21 +42,18 @@ int		ft_strlen(const char *str)
 
 int	ft_num_len(int num)
 {
-	int res_len;
+	int len;
 
-	res_len = 0;
+	len = 0;
 	if (num == 1 << 31)
-		return (11);
+		return (10);
 	if (0 > num)
-	{
 		num = num * -1;
-		++res_len;
-	}
 	while (0 < num)
 	{
 		num = num / 10;
-		++res_len;
+		++len;
 	}
-	return (res_len);
+	return (len);
 }
 

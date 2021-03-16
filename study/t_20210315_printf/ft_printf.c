@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 20:49:26 by jso               #+#    #+#             */
-/*   Updated: 2021/03/15 12:18:45 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/15 22:58:55 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ void	ft_printf_all(va_list ap, t_flags *flags)
 		ft_printf_str(ap, flags);
 	else if (flags->type == '%')
 		ft_printf_per(flags);
-	else if (flags->type == 'd')
-		ft_printf_dec(ap, flags);
+//	else if (flags->type == 'd')
+//		ft_printf_dec(ap, flags);
 }
 
 void	ft_printf_rst(va_list ap, const char *fmt, t_flags *flags)

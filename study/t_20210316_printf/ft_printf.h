@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 20:35:19 by jso               #+#    #+#             */
-/*   Updated: 2021/03/17 21:36:15 by jso              ###   ########.fr       */
+/*   Created: 2021/03/17 21:27:32 by jso               #+#    #+#             */
+/*   Updated: 2021/03/17 21:37:24 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+# include <unistd.h>
+# include <stdarg.h>
+# include <stdlib.h>
 
-int ft_printf(const char *fmt, ...)
+typedef struct	s_flags
 {
-	va_list ap;
+	int			left;
+	int			zero;
+	int			width;
+	int			dot;
+	int			precision;
+	int			type;
+}				t_flags;
 
-	g_ret_value = 0;
-	return(g_ret_value);
-}
+int				g_ret_value;
+
+int				ft_printf(const char *fmt, ...);
+
+#endif

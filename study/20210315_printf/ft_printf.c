@@ -1,0 +1,70 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/12 20:49:26 by jso               #+#    #+#             */
+/*   Updated: 2021/03/15 22:58:55 by jso              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_printf.h"
+
+void	ft_init_struct(t_flags *flags)
+{
+	flags->left = 0;
+	flags->zero = 0;
+	flags->precision = 0;
+	flags->dot = 0;
+	flags->width = 0;
+	flags->type = 0;
+	flags->padding_byte = 0;
+}
+
+void	ft_printf_all(va_list ap, t_flags *flags)
+{
+	if (flags->type == 'c')
+		ft_printf_char(ap, flags);
+	else if (flags->type == 's')
+		ft_printf_str(ap, flags);
+	else if (flags->type == '%')
+		ft_printf_per(flags);
+//	else if (flags->type == 'd')
+//		ft_printf_dec(ap, flags);
+}
+
+void	ft_printf_rst(va_list ap, const char *fmt, t_flags *flags)
+{
+	while (*fmt)
+	{
+		if (*fmt == '%')
+		{
+			++fmt;
+			ft_init_struct(flags);
+			ft_check_format(ap, &fmt, flags);
+			ft_printf_all(ap, flags);
+		}
+		else
+		{
+			write(1, fmt, 1);
+			flags->ret_value++;
+		}
+		++fmt;
+	}
+}
+
+int		ft_printf(const char *format, ...)
+{
+	t_flags *flags;
+	va_list ap;
+
+	flags = malloc(sizeof(t_flags));
+	flags->ret_value = 0;
+	va_start(ap, format);
+	ft_printf_rst(ap, format, flags);
+	va_end(ap);
+	free(flags);
+	return (flags->ret_value);
+}

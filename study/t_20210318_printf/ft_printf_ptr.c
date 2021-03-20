@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:46:49 by jso               #+#    #+#             */
-/*   Updated: 2021/03/20 13:06:54 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/20 13:13:29 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		ft_printf_num_len(long long num, t_flags *flg, int base)
 	int i;
 
 	i = 0;
-	if (flg->prcs == 0 && num == 0)
+	if (flg->dot == 0 && num == 0)
 		++i;
 	while (num)
 	{

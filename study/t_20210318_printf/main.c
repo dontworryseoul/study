@@ -21,6 +21,11 @@ int main(void)
 	printf("\norg: %.p|", NULL);
 	printf("\n");
 
+	num1 = ft_printf("cpy: %-16.p|", NULL);
+	printf("\n");
+	printf("\norg: %-16.p|", NULL);
+	printf("\n");
+
 	num1 = ft_printf("cpy: %-6p|", ch);
 	printf("\n");
 	printf("\norg: %-6p|", ch);

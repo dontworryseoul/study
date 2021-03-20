@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:46:49 by jso               #+#    #+#             */
-/*   Updated: 2021/03/20 09:22:12 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/20 09:38:42 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,9 @@ void	ft_printf_ptr_z_x(long long p_hex, t_flags *flg)
 	base = "0123456789abcdef";
 	ft_printf_putchar(ASCII_ZERO);
 	ft_printf_putchar(ASCII_SMALL_X);
-	if(!flg->dot && !p_hex)
+	if(flg->dot && p_hex == 0)
+		;
+	else
 		ft_printf_recur_ptr(p_hex, base);
 }
 

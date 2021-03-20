@@ -9,15 +9,30 @@ int main(void)
 
 	num = 0;
 	num1 = 0;
-	ch = 0;
+	ch = "";
 
 	//num = printf("%p",ch);
 	//printf("\n");
+	/*
 	num1 = ft_printf("min: %p|", NULL);
 	printf("\n");
 	printf("\nnum1: %d", num1);
 	printf("\n");
 	printf("\norg: %p|", NULL);
+	printf("\n");
+
+	num1 = ft_printf("min: %.p|", ch);
+	printf("\n");
+	printf("\nnum1: %d", num1);
+	printf("\n");
+	printf("\norg: %.p|", ch);
+	printf("\n");
+	*/
+	num1 = ft_printf("min: %.p|", NULL);
+	printf("\n");
+	printf("\nnum1: %d", num1);
+	printf("\n");
+	printf("\norg: %.p|", NULL);
 	printf("\n");
 	/*
 	num = ft_printf("%p", &ret);

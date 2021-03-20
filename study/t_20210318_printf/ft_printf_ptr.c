@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:46:49 by jso               #+#    #+#             */
-/*   Updated: 2021/03/20 08:18:53 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/20 09:22:12 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,36 +31,38 @@ void	ft_printf_recur_ptr(long long p_hex, char *base)
 		ft_printf_recur_ptr(p_hex / 16, base);
 	ft_printf_putchar(base[p_hex % 16]);
 }
-void	ft_print_padding(int len)
+void	ft_printf_padding(int len)
 {
 	while (len-- > 0)
 		ft_printf_putchar(' ');
 }
 
-void	ft_printf_ptr(long long p_hex, t_flags *flg)
+void	ft_printf_ptr_z_x(long long p_hex, t_flags *flg)
 {
 	char *base;
+
+	base = "0123456789abcdef";
+	ft_printf_putchar(ASCII_ZERO);
+	ft_printf_putchar(ASCII_SMALL_X);
+	if(!flg->dot && !p_hex)
+		ft_printf_recur_ptr(p_hex, base);
+}
+
+void	ft_printf_ptr(long long p_hex, t_flags *flg)
+{
 	int	len;
 
 	len = 0;
-	base = "0123456789abcdef";
 	len = ft_printf_num_len(p_hex, 16);
 	len = flg->width - len - 2;
-	if (flg->dot && p_hex == ZERO)
-		;
-	else if (flg->left)
+	if (flg->left)
 	{
-		ft_printf_putchar(ASCII_ZERO);
-		ft_printf_putchar(ASCII_SMALL_X);
-		ft_printf_recur_ptr(p_hex, base);
-		ft_print_padding(len);
+		ft_printf_ptr_z_x(p_hex,flg);
+		ft_printf_padding(len);
 	}
 	else
 	{
-		while (len-- > 0)
-			ft_printf_putchar(' ');
-		ft_printf_putchar('0');
-		ft_printf_putchar('x');
-		ft_printf_recur_ptr(p_hex, base);
+		ft_printf_padding(len);
+		ft_printf_ptr_z_x(p_hex,flg);
 	}
 }

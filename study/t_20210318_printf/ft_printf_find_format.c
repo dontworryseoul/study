@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 20:43:43 by jso               #+#    #+#             */
-/*   Updated: 2021/03/19 14:11:53 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/19 19:11:09 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,9 +96,7 @@ void	ft_printf_find_format(va_list ap, const char *fmt, t_flags *flg)
 			ft_printf_printing_types(ap, flg);
 		}
 		else
-		{
 			ft_printf_putchar(*fmt);
-		}
 	++fmt;
 	}		
 }

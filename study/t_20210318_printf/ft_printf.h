@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 04:55:36 by jso               #+#    #+#             */
-/*   Updated: 2021/03/19 14:51:13 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/20 08:18:36 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 # include <stdarg.h>
 # include <stdlib.h>
 
+# define ZERO 0
+# define ASCII_ZERO 48
+# define ASCII_SMALL_X 120
 typedef struct
 {
 	int		left;
@@ -47,7 +50,10 @@ void		ft_printf_check_pres(va_list ap, const char **fmt, t_flags *flg);
 void		ft_printf_check_type(const char **f, t_flags *flg);
 void		ft_printf_printing_types(va_list ap, t_flags *flg);
 
-void		ft_printf_ptr(void *ptr);
+void		ft_printf_ptr(long long p_hex, t_flags *flg);
+void		ft_printf_recur_ptr(long long p_hex, char *base);
+int			ft_printf_num_len(long long p_hex, int base);
+void		ft_print_padding(int len);
 
 void		ft_printf_putchar(char c);
 

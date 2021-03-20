@@ -3,10 +3,39 @@
 
 int main(void)
 {
-	int ret;
+	char *ch;
+	int num;
+	int num1;
 
-	ret = ft_printf("Hello");
+	num = 0;
+	num1 = 0;
+	ch = "adfadfadfasdsf";
+
+	//num = printf("%p",ch);
+	//printf("\n");
+	num1 = ft_printf("min: %-15p|", ch);
 	printf("\n");
-	printf("ret : %d", ret);
+	printf("\nnum1: %d", num1);
+	printf("\n");
+	printf("\norg: %-15p|", ch);
+	printf("\n");
+	/*
+	num = ft_printf("%p", &ret);
+	printf("te: %d\n"), 
+	printf("|===num : %d", num);
+	num = ft_printf("%p", &ret);
+	printf("\n");
+
+	printf("num : %d", num);
+	printf("\n");
+
+	printf("Where");
+	printf("\n");
+	
+	printf("org:");
+	num = printf("%p", &ret);
+	printf("\n");
+	printf("num : %d", num);
+	*/
 	return (0);
 }

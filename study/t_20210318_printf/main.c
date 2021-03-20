@@ -11,6 +11,23 @@ int main(void)
 	num1 = 0;
 	ch = "";
 
+	num1 = ft_printf("cpy: %-6p|", NULL);
+	printf("\n");
+	printf("\norg: %-6p|", NULL);
+	printf("\n");
+
+	num1 = ft_printf("cpy: %.p|", NULL);
+	printf("\n");
+	printf("\norg: %.p|", NULL);
+	printf("\n");
+
+	num1 = ft_printf("cpy: %-6p|", ch);
+	printf("\n");
+	printf("\norg: %-6p|", ch);
+	printf("\n");
+	printf("0123456789");
+	printf("0123456789");
+	printf("0123456789");
 	//num = printf("%p",ch);
 	//printf("\n");
 	/*
@@ -28,14 +45,7 @@ int main(void)
 	printf("\norg: %.p|", ch);
 	printf("\n");
 	*/
-	num1 = ft_printf("min: %-16p|", NULL);
-	printf("\n");
-	printf("\nnum1: %d", num1);
-	printf("\n");
-	printf("\norg: %-16p|", NULL);
-	printf("\n");
 	/*
-	num = ft_printf("%p", &ret);
 	printf("te: %d\n"), 
 	printf("|===num : %d", num);
 	num = ft_printf("%p", &ret);

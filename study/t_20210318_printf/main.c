@@ -28,11 +28,11 @@ int main(void)
 	printf("\norg: %.p|", ch);
 	printf("\n");
 	*/
-	num1 = ft_printf("min: %.p|", NULL);
+	num1 = ft_printf("min: %-16p|", NULL);
 	printf("\n");
 	printf("\nnum1: %d", num1);
 	printf("\n");
-	printf("\norg: %.p|", NULL);
+	printf("\norg: %-16p|", NULL);
 	printf("\n");
 	/*
 	num = ft_printf("%p", &ret);

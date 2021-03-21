@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 04:55:36 by jso               #+#    #+#             */
-/*   Updated: 2021/03/21 05:09:46 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/21 21:37:21 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdlib.h>
+# include <stdio.h>  // have to remove later.
 
 # define ZERO 0
 # define ASCII_ZERO 48
@@ -57,6 +58,9 @@ void		ft_printf_padding(int len);
 void		ft_printf_ptr_hex(long long p_hex, t_flags *flg, char sw);
 
 void		ft_printf_x_X(unsigned int num, t_flags *flg);
+void		ft_printf_x_X_padding(int len, t_flags *flg);
+void		ft_printf_printf_0_padding(int len, t_flags *flg);
+
 void		ft_printf_putchar(char c);
 
 #endif

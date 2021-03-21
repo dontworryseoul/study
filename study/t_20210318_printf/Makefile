@@ -6,7 +6,7 @@
 #    By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/18 20:43:00 by jso               #+#    #+#              #
-#    Updated: 2021/03/19 15:40:29 by jso              ###   ########.fr        #
+#    Updated: 2021/03/21 08:37:57 by jso              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ MEM			= ft_printf.c 		\
 			  ft_printf_find_format.c 	\
 			  ft_printf_print_center.c	\
 			  ft_printf_ptr.c			\
+			  ft_printf_x_X.c
 
 OBJ			= $(MEM:.c=.o)
 

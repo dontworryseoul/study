@@ -1,0 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_x_X.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/21 08:33:22 by jso               #+#    #+#             */
+/*   Updated: 2021/03/21 08:34:08 by jso              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_printf.h"
+
+
+void	ft_printf_x_X(unsigned int num, t_flags *flg)
+{
+	char	sw;
+	int		len;
+
+	sw = 'x';
+	if (flg->type == 'X')
+		sw = 'X';
+	len = ft_printf_num_len(num, flg, 16);
+	if (flg->left)
+	{
+		ft_printf_ptr_hex(num, flg, sw);
+		ft_printf_padding(len);
+	}
+	else
+	{
+		ft_printf_padding(len);
+		ft_printf_ptr_hex(num, flg, sw);
+	}
+
+	while ((flg->prcs - len--) > 0)
+		ft_printf_putchar('0');
+}

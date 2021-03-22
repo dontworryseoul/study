@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 20:43:43 by jso               #+#    #+#             */
-/*   Updated: 2021/03/19 19:11:09 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/21 23:04:49 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ft_printf_init_struct(t_flags *flg)
 	flg->width = 0;
 	flg->dot = 0;
 	flg->prcs = 0;
+	flg->len = 0;
 	flg->type = 0;
 }
 

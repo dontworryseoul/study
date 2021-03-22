@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 04:55:36 by jso               #+#    #+#             */
-/*   Updated: 2021/03/21 21:37:21 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/21 23:07:12 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct
 	int		width;
 	int		dot;
 	int		prcs;
+	int		len;
 	char	type;
 }				t_flags;
 
@@ -40,6 +41,7 @@ int			ft_printf(const char *fmt, ...);
 */
 
 void		ft_printf_find_format(va_list ap, const char *fmt, t_flags *flg);
+void		ft_printf_init_struct(t_flags *flg);
 void		ft_printf_check_flag(const char **fmt, t_flags *flg);
 void		ft_printf_check_width(va_list ap, const char **fmt, t_flags *flg);
 void		ft_printf_check_pres(va_list ap, const char **fmt, t_flags *flg);
@@ -58,8 +60,8 @@ void		ft_printf_padding(int len);
 void		ft_printf_ptr_hex(long long p_hex, t_flags *flg, char sw);
 
 void		ft_printf_x_X(unsigned int num, t_flags *flg);
-void		ft_printf_x_X_padding(int len, t_flags *flg);
-void		ft_printf_printf_0_padding(int len, t_flags *flg);
+void		ft_printf_x_X_padding(t_flags *flg);
+void		ft_printf_printf_0_padding(t_flags *flg);
 
 void		ft_printf_putchar(char c);
 

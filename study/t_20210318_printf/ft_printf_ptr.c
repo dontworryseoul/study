@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:46:49 by jso               #+#    #+#             */
-/*   Updated: 2021/03/21 08:35:20 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/21 23:49:40 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ void	ft_printf_ptr_hex(long long p_hex, t_flags *flg, char sw)
 		ft_printf_putchar(ASCII_ZERO);
 		ft_printf_putchar(ASCII_SMALL_X);
 	}
-	if(flg->dot && p_hex == 0)
+	if (flg->dot && p_hex == 0 && flg->width > 0)
+		ft_printf_putchar('0');
+	else if (flg->dot && p_hex == 0)
 		;
 	else
 		ft_printf_recur_ptr(p_hex, base);
@@ -47,7 +49,7 @@ int		ft_printf_num_len(long long num, t_flags *flg, int base)
 	int i;
 
 	i = 0;
-	if (flg->dot == 0 && num == 0)
+	if ((flg->dot == 0 && num == 0) || num == 0)
 		++i;
 	while (num)
 	{

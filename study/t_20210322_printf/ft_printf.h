@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 07:26:10 by jso               #+#    #+#             */
-/*   Updated: 2021/03/23 15:29:47 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/23 16:33:10 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void			ft_print_types(va_list ap);
 
 void			ft_print_c(int ch);
 void			ft_print_percent(void);
+void			ft_print_s(char *str);
 void			ft_padding(int byte);
 
 /* 
@@ -57,5 +58,6 @@ void			ft_padding(int byte);
 */
 
 void			ft_printf_putchar(int c);
+int				ft_strlen(const char *s);
 
 #endif

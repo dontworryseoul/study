@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 08:26:02 by jso               #+#    #+#             */
-/*   Updated: 2021/03/23 15:29:14 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/23 15:55:17 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ void	ft_print_types(va_list ap)
 {
 	if (g_flg.type == 'c')
 		ft_print_c(va_arg(ap, int));
-	if (g_flg.type == '%')
+	else if (g_flg.type == '%')
 		ft_print_percent();
+	else if (g_flg.type == 's')
+		ft_print_s(va_arg(ap, char *));
 }

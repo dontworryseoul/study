@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:46:49 by jso               #+#    #+#             */
-/*   Updated: 2021/03/21 23:49:40 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/22 05:51:32 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,14 @@ void	ft_printf_padding(int len)
 		ft_printf_putchar(' ');
 }
 
-void	ft_printf_ptr_hex(long long p_hex, t_flags *flg, char sw)
+void	ft_printf_ptr_hex(long long p_hex, t_flags *flg)
 {
 	char *base;
 
 	base = "0123456789abcdef";
-	if (sw == 'X')
-		base = "0123456789ABCDEF";
-	if (sw == 'h')
-	{
-		ft_printf_putchar(ASCII_ZERO);
-		ft_printf_putchar(ASCII_SMALL_X);
-	}
-	if (flg->dot && p_hex == 0 && flg->width > 0)
-		ft_printf_putchar('0');
-	else if (flg->dot && p_hex == 0)
+	ft_printf_putchar(ASCII_ZERO);
+	ft_printf_putchar(ASCII_SMALL_X);
+	if (flg->dot && p_hex == 0)
 		;
 	else
 		ft_printf_recur_ptr(p_hex, base);
@@ -68,12 +61,12 @@ void	ft_printf_ptr(long long p_hex, t_flags *flg)
 	len = flg->width - 2 - len;
 	if (flg->left)
 	{
-		ft_printf_ptr_hex(p_hex, flg, 'h');
+		ft_printf_ptr_hex(p_hex, flg);
 		ft_printf_padding(len);
 	}
 	else
 	{
 		ft_printf_padding(len);
-		ft_printf_ptr_hex(p_hex, flg, 'h');
+		ft_printf_ptr_hex(p_hex, flg);
 	}
 }

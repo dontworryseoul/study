@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 04:55:36 by jso               #+#    #+#             */
-/*   Updated: 2021/03/21 23:07:12 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/22 06:17:22 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,11 @@ void		ft_printf_ptr(long long p_hex, t_flags *flg);
 void		ft_printf_recur_ptr(long long p_hex, char *base);
 int			ft_printf_num_len(long long p_hex, t_flags *flg, int base);
 void		ft_printf_padding(int len);
-void		ft_printf_ptr_hex(long long p_hex, t_flags *flg, char sw);
+void		ft_printf_ptr_hex(long long p_hex, t_flags *flg);
+
+/*
+** type X below
+*/
 
 void		ft_printf_x_X(unsigned int num, t_flags *flg);
 void		ft_printf_x_X_padding(t_flags *flg);

@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 08:33:22 by jso               #+#    #+#             */
-/*   Updated: 2021/03/22 02:22:36 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/22 05:52:26 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,22 +51,17 @@ void	ft_printf_x_X_padding(t_flags *flg)
 
 void	ft_printf_x_X(unsigned int num, t_flags *flg)
 {
-	char	sw;
-
-	sw = 'x';
-	if (flg->type == 'X')
-		sw = 'X';
 	flg->len = ft_printf_num_len(num, flg, 16);
 	if (flg->left)
 	{
 		ft_printf_print_0_padding(flg);
-		ft_printf_ptr_hex(num, flg, sw);
+		ft_printf_ptr_hex(num, flg);
 		ft_printf_x_X_padding(flg);
 	}
 	else
 	{
 		ft_printf_x_X_padding(flg);
 		ft_printf_print_0_padding(flg);
-		ft_printf_ptr_hex(num, flg, sw);
+		ft_printf_ptr_hex(num, flg);
 	}
 }

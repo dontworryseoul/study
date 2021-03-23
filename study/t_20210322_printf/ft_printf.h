@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 07:26:10 by jso               #+#    #+#             */
-/*   Updated: 2021/03/23 13:19:47 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/23 15:29:47 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include <stdio.h>
 
 typedef struct s_flgs
 {
@@ -45,9 +46,10 @@ void			ft_check_prcs(va_list ap, const char **fmt);
 */
 
 void			ft_check_type(const char **f);
-void			ft_printf_types(va_list ap);
+void			ft_print_types(va_list ap);
 
 void			ft_print_c(int ch);
+void			ft_print_percent(void);
 void			ft_padding(int byte);
 
 /* 

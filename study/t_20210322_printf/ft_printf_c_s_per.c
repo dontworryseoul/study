@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 08:39:55 by jso               #+#    #+#             */
-/*   Updated: 2021/03/23 13:20:20 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/23 15:08:51 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_padding(int byte)
 {
 	char  padding_char;
 
-	if (g_flg.zero && g_flg.type == '%' && !g_flg.left)
+	if (g_flg.type == '%' && g_flg.zero && !g_flg.left)
 		padding_char = '0';
 	else
 		padding_char = ' ';
@@ -30,11 +30,34 @@ void	ft_padding(int byte)
 
 void	ft_print_c(int ch)
 {
-	unsigned char cp_ch;
+	int byte;
 
-	cp_ch = (unsigned char)ch;
+	byte = 1;
 	if (g_flg.left)
 	{
-		ft_printf_putchar(cp_ch);
+		ft_printf_putchar(ch);
+		ft_padding(byte);
+	}
+	else
+	{
+		ft_padding(byte);
+		ft_printf_putchar(ch);
+	}
+}
+
+void	ft_print_percent(void)
+{
+	int byte;
+
+	byte = 1;
+	if (g_flg.left)
+	{
+		ft_printf_putchar('%');
+		ft_padding(byte);
+	}
+	else
+	{
+		ft_padding(byte);
+		ft_printf_putchar('%');
 	}
 }

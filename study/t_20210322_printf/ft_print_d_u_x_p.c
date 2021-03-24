@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 19:25:18 by jso               #+#    #+#             */
-/*   Updated: 2021/03/24 00:35:07 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/24 12:31:29 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		ft_divide_num(unsigned int num, int base_num)
 	cnt = 0;
 	while (num)
 	{
-		num = num / base_num
+		num = num / base_num;
 		++cnt;
 	}
 	return (cnt);
@@ -32,15 +32,10 @@ int		ft_count_number(unsigned int num, int base_num)
 
 	len = ft_divide_num(num, base_num);
 	if (0 < (g_flg.prcs - len))
-		len += g_flg.prcs - len;
+		len = g_flg.prcs;
 	wid_0_len = g_flg.width - len;
 	if (wid_0_len > 0 && g_flg.zero && g_flg.left == 0 && g_flg.prcs < 0)
-		while (wid_0_len--)
-			++len;
-
-	while (g_flg.zero && g_flg.left == 0 
-			&& g_flg.prcs < 0 && wid_0_len--)
-		++len;
+		len = wid_0_len;
 	if (!g_flg.prcs && !num)
 		--len;
 	return (len);

@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 07:26:10 by jso               #+#    #+#             */
-/*   Updated: 2021/03/23 16:33:10 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/24 00:35:08 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,10 @@ void			ft_padding(int byte);
 
 void			ft_printf_putchar(int c);
 int				ft_strlen(const char *s);
+
+/* 
+**				The funcs in the ft_printf_d_u_x_p.c file below
+*/
+
 
 #endif

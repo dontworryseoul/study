@@ -8,8 +8,8 @@ int main(void)
 	//u_num1 = 0xFFFFFFFF;
 	u_num = 4294967161;
 
-	ft_printf("\n%0*.*u", 1, 1, u_num);
-	printf("\n%0*.*u", 1, 1, u_num);
+	ft_printf("\n%0*.*x", 1, 1, u_num);
+	printf("\n%0*.*x", 1, 1, u_num);
 	ft_printf("\n");
 	/*
 	ft_printf("\n%u", u_num);

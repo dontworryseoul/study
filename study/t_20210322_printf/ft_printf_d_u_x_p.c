@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 19:25:18 by jso               #+#    #+#             */
-/*   Updated: 2021/03/25 17:08:36 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/25 17:32:45 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int		ft_count_number(unsigned int num, int base_num)
 		ft_printf_putchar(base[u_num % (unsigned int)n_base]);
 	}
 
-	void	ft_print_0_prcs(int len)
+void	ft_print_0_prcs(int len)
 {
 	while (g_flg.prcs > len++)
 		ft_printf_putchar('0');
@@ -74,8 +74,7 @@ void	ft_comb_u(unsigned int u_num, int n_base, char *base)
 	len = ft_divide_num(u_num, TEN);
 	ft_print_0_prcs(len);
 	ft_print_0_padding(g_flg.width - len);
-	//if ((g_flg.prcs > 0 && u_num >= 0))
-	if ((g_flg.prcs > 0 && !u_num) || (g_flg.width >= g_flg.prcs))
+	if (!(g_flg.prcs == 0 && u_num == 0))
 		ft_print_recur(u_num, n_base, base);
 }
 

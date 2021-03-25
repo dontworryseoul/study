@@ -18,7 +18,9 @@ int main(void)
 	ft_printf("\n");
 	ft_printf("\n%05u", 123456);
 	ft_printf("\n");
-	ft_printf("\n%05.3u", 1);
+	ft_printf("\n%05.3u", -1);
+	ft_printf("\n");
+	ft_printf("\n%-05.3u", 1);
 	ft_printf("\n");
 
 	/* c, s type

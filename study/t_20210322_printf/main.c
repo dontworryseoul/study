@@ -5,26 +5,27 @@ int main(void)
 
 	unsigned int u_num;
 
-	u_num = 0xFFFFFFFF;
+	//u_num1 = 0xFFFFFFFF;
+	u_num = 4294967161;
+
+	ft_printf("\n%0*.*u", 1, 1, u_num);
+	printf("\n%0*.*u", 1, 1, u_num);
+	ft_printf("\n");
 	/*
 	ft_printf("\n%u", u_num);
 	ft_printf("\n%u", 0);
 	ft_printf("\n%05.3u", 1);
 	ft_printf("\n");
-	*/
 	ft_printf("\n%-4.*u", -4, 0);
 	ft_printf("\n");
-	/*
 	ft_printf("\n%-4.u", 0);
 	ft_printf("\n");
 	ft_printf("\n%-4.*u", -4, 0);
 	ft_printf("\n");
 	ft_printf("\n|%4.*u|", -4, 0);
 	ft_printf("\n");
-	*/
 	ft_printf("\n%4.*u", -4, 0);
 	ft_printf("\n");
-/*	
 	ft_printf("\n%05u", 1);
 	ft_printf("\n");
 	ft_printf("\n%-05u", 1);

@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 19:25:18 by jso               #+#    #+#             */
-/*   Updated: 2021/03/25 16:43:42 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/25 17:08:36 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	ft_comb_u(unsigned int u_num, int n_base, char *base)
 	ft_print_0_prcs(len);
 	ft_print_0_padding(g_flg.width - len);
 	//if ((g_flg.prcs > 0 && u_num >= 0))
-	if ((g_flg.prcs > 0 && !u_num) || (g_flg.width > g_flg.prcs))
+	if ((g_flg.prcs > 0 && !u_num) || (g_flg.width >= g_flg.prcs))
 		ft_print_recur(u_num, n_base, base);
 }
 

@@ -12,6 +12,19 @@ int main(void)
 	ft_printf("\n%05.3u", 1);
 	ft_printf("\n");
 	*/
+	ft_printf("\n%-4.*u", -4, 0);
+	ft_printf("\n");
+	/*
+	ft_printf("\n%-4.u", 0);
+	ft_printf("\n");
+	ft_printf("\n%-4.*u", -4, 0);
+	ft_printf("\n");
+	ft_printf("\n|%4.*u|", -4, 0);
+	ft_printf("\n");
+	*/
+	ft_printf("\n%4.*u", -4, 0);
+	ft_printf("\n");
+/*	
 	ft_printf("\n%05u", 1);
 	ft_printf("\n");
 	ft_printf("\n%-05u", 1);
@@ -23,7 +36,7 @@ int main(void)
 	ft_printf("\n%-05.3u", 1);
 	ft_printf("\n");
 
-	/* c, s type
+	 c, s type
 	ft_printf("\nhello%c", 'Y');
 	ft_printf("\nhello%4c", 'Y');
 	ft_printf("\nhello%-4c", 'Y');

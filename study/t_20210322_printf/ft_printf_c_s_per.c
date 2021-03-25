@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 08:39:55 by jso               #+#    #+#             */
-/*   Updated: 2021/03/23 19:24:18 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/25 12:08:50 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_print_s(char *str)
 	if (str == NULL)
 		str = "(null)";
 	len = ft_strlen(str);
-	if (len > g_flg.prcs && (0 <= g_flg.prcs))
+	if ((0 <= g_flg.prcs) && len > g_flg.prcs)
 		len = g_flg.prcs;
 	cp_len = len;
 	if (g_flg.left)

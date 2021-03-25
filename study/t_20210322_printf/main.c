@@ -6,8 +6,18 @@ int main(void)
 	unsigned int u_num;
 
 	u_num = 0xFFFFFFFF;
+	/*
 	ft_printf("\n%u", u_num);
 	ft_printf("\n%u", 0);
+	ft_printf("\n%05.3u", 1);
+	ft_printf("\n");
+	*/
+	ft_printf("\n%05u", 1);
+	ft_printf("\n");
+	ft_printf("\n%-05u", 1);
+	ft_printf("\n");
+	ft_printf("\n%05u", 123456);
+	ft_printf("\n");
 	ft_printf("\n%05.3u", 1);
 	ft_printf("\n");
 

@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 19:25:18 by jso               #+#    #+#             */
-/*   Updated: 2021/03/26 13:24:31 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/26 13:29:50 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		ft_divide_num(long long num, int base_num)
 	return (cnt);
 }
 
-int		ft_count_padding(long long num, int base_num)
+int		ft_count_padding(unsigned int num, int base_num)
 {
 	int	len;
 	int wid_0_len;
@@ -38,8 +38,6 @@ int		ft_count_padding(long long num, int base_num)
 	wid_0_len = g_flg.width - len;
 	if (wid_0_len > 0 && g_flg.zero && g_flg.left == 0 && g_flg.prcs < 0)
 		len = g_flg.width;
-	printf("\n41: %d", g_flg.width);
-	printf("\n42: %d", len);
 	if (!g_flg.prcs && !num)
 		--len;
 	return (len);
@@ -133,8 +131,6 @@ void	ft_print_p(long long p_num)
 
 	base = "0123456789abcdefp";
 	len = ft_count_padding(p_num, 16) + 2;
-	printf("\n134: %d", g_flg.width);
-	printf("\n135: %d", len);
 	if (g_flg.left)
 	{
 		ft_comb_u(p_num, 16, base);

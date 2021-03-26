@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 19:25:18 by jso               #+#    #+#             */
-/*   Updated: 2021/03/26 12:53:51 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/26 13:24:31 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		ft_divide_num(long long num, int base_num)
 	return (cnt);
 }
 
-int		ft_count_number(unsigned int num, int base_num)
+int		ft_count_padding(long long num, int base_num)
 {
 	int	len;
 	int wid_0_len;
@@ -38,6 +38,8 @@ int		ft_count_number(unsigned int num, int base_num)
 	wid_0_len = g_flg.width - len;
 	if (wid_0_len > 0 && g_flg.zero && g_flg.left == 0 && g_flg.prcs < 0)
 		len = g_flg.width;
+	printf("\n41: %d", g_flg.width);
+	printf("\n42: %d", len);
 	if (!g_flg.prcs && !num)
 		--len;
 	return (len);
@@ -89,7 +91,7 @@ void	ft_print_u(unsigned int u_num)
 	int		len;
 
 	base = "0123456789";
-	len = ft_count_number(u_num, TEN);
+	len = ft_count_padding(u_num, TEN);
 	if (g_flg.left)
 	{
 		ft_comb_u(u_num, TEN, base);
@@ -111,7 +113,7 @@ void	ft_print_x(unsigned int x_num)
 		base = "0123456789abcdef";
 	else
 		base = "0123456789ABCDEF";
-	len = ft_count_number(x_num, 16);
+	len = ft_count_padding(x_num, 16);
 	if (g_flg.left)
 	{
 		ft_comb_u(x_num, 16, base);
@@ -130,7 +132,9 @@ void	ft_print_p(long long p_num)
 	int len;
 
 	base = "0123456789abcdefp";
-	len = ft_count_number(p_num, 16);
+	len = ft_count_padding(p_num, 16) + 2;
+	printf("\n134: %d", g_flg.width);
+	printf("\n135: %d", len);
 	if (g_flg.left)
 	{
 		ft_comb_u(p_num, 16, base);

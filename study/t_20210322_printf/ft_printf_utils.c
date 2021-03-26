@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 12:36:55 by jso               #+#    #+#             */
-/*   Updated: 2021/03/25 16:59:07 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/26 13:03:03 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_padding(int byte)
 	char	padding_char;
 	int		cp_width;
 
+	printf("\n20: %d", byte);
+	printf("\n21: %d", g_flg.width);
 	if (g_flg.type == '%' && g_flg.zero && !g_flg.left)
 		padding_char = '0';
 	else

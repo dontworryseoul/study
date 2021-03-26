@@ -10,15 +10,16 @@ int main(void)
 //	u_num = 4294967161;
 	u_num = "hello";
 
-	printf("\n13: org\t%-3.p", &u_num);
-	ft_printf("\n\t%-3.p", &u_num);
+	printf("\n13: org\t|%-16.p|", &u_num);
+	ft_printf("\n\t|%-16.p|", &u_num);
+	ft_printf("\n\t|0123456789012345678901234567890");
 	ft_printf("\n");
+	/*
 	ft_printf("\n\t%.p", &u_num);
 	ft_printf("\n");
 	printf("\n18: org\t%-3.p", &u_num);
 	//printf("\n19: org\t%lld", &u_num);
 	ft_printf("\n");
-	/*
 	ft_printf("\n%u", u_num);
 	ft_printf("\n%u", 0);
 	ft_printf("\n%05.3u", 1);

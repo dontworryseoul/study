@@ -6,13 +6,13 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 19:25:18 by jso               #+#    #+#             */
-/*   Updated: 2021/03/25 19:31:30 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/26 12:53:51 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_divide_num(unsigned int num, int base_num)
+int		ft_divide_num(long long num, int base_num)
 {
 	int cnt;
 
@@ -43,7 +43,7 @@ int		ft_count_number(unsigned int num, int base_num)
 	return (len);
 	}
 
-void	ft_print_recur(unsigned int u_num, int n_base, char *base)
+void	ft_print_recur(long long u_num, int n_base, char *base)
 {
 	if (u_num >= (unsigned int)n_base)
 		ft_print_recur(u_num / (unsigned int)n_base, n_base, base);
@@ -67,7 +67,7 @@ void	ft_print_0_padding(int len)
 	}
 }
 
-void	ft_comb_u(unsigned int u_num, int n_base, char *base)
+void	ft_comb_u(long long u_num, int n_base, char *base)
 {
 	int		len;
 
@@ -124,7 +124,7 @@ void	ft_print_x(unsigned int x_num)
 	}
 }
 
-void	ft_print_p(long long int p_num)
+void	ft_print_p(long long p_num)
 {
 	char *base;
 	int len;

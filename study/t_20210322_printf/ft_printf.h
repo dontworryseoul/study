@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 07:26:10 by jso               #+#    #+#             */
-/*   Updated: 2021/03/25 19:23:03 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/26 12:52:57 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,12 @@ int				ft_strlen(const char *s);
 */
 
 void			ft_print_u(unsigned int u_num);
-void			ft_print_recur(unsigned int u_num, int n_base, char *base);
+void			ft_comb_u(long long u_num, int n_base, char *base);
+void			ft_print_recur(long long u_num, int n_base, char *base);
 void			ft_print_0_prcs(int len);
 void			ft_print_0_padding(int len);
 int				ft_count_number(unsigned int num, int base_num);
-int				ft_divide_num(unsigned int num, int base_num);
+int				ft_divide_num(long long num, int base_num);
 void			ft_print_x(unsigned int x_num);
 void			ft_print_p(long long p_num);
 

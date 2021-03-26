@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 19:25:18 by jso               #+#    #+#             */
-/*   Updated: 2021/03/25 18:03:11 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/25 19:31:30 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,11 @@ void	ft_comb_u(unsigned int u_num, int n_base, char *base)
 {
 	int		len;
 
+	if (base[16] == 'p')
+	{
+		ft_printf_putchar('0');
+		ft_printf_putchar('x');
+	}
 	len = ft_divide_num(u_num, n_base);
 	ft_print_0_prcs(len);
 	ft_print_0_padding(g_flg.width - len);
@@ -97,7 +102,7 @@ void	ft_print_u(unsigned int u_num)
 	}
 }
 
-void	ft_print_x(unsigned int u_num)
+void	ft_print_x(unsigned int x_num)
 {
 	char *base;
 	int len;
@@ -106,15 +111,34 @@ void	ft_print_x(unsigned int u_num)
 		base = "0123456789abcdef";
 	else
 		base = "0123456789ABCDEF";
-	len = ft_count_number(u_num, 16);
+	len = ft_count_number(x_num, 16);
 	if (g_flg.left)
 	{
-		ft_comb_u(u_num, 16, base);
+		ft_comb_u(x_num, 16, base);
 		ft_padding(len);
 	}
 	else
 	{
 		ft_padding(len);
-		ft_comb_u(u_num, 16, base);
+		ft_comb_u(x_num, 16, base);
+	}
+}
+
+void	ft_print_p(long long int p_num)
+{
+	char *base;
+	int len;
+
+	base = "0123456789abcdefp";
+	len = ft_count_number(p_num, 16);
+	if (g_flg.left)
+	{
+		ft_comb_u(p_num, 16, base);
+		ft_padding(len);
+	}
+	else
+	{
+		ft_padding(len);
+		ft_comb_u(p_num, 16, base);
 	}
 }

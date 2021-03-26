@@ -3,14 +3,18 @@
 int main(void)
 {
 
-	unsigned int u_num;
+	unsigned int u_num1;
+	char *u_num;
 
 	//u_num1 = 0xFFFFFFFF;
-	u_num = 4294967161;
+//	u_num = 4294967161;
+	u_num = "hello";
 
-	ft_printf("\n%-3.*x", -4, u_num);
+	ft_printf("\n\t%-3.p", &u_num);
 	ft_printf("\n");
-	printf("\norg_%-3.*x", -4, u_num);
+	ft_printf("\n\t%.p", &u_num);
+	ft_printf("\n");
+	printf("\norg\t%-3.p", &u_num);
 	ft_printf("\n");
 	/*
 	ft_printf("\n%u", u_num);

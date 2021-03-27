@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 08:26:02 by jso               #+#    #+#             */
-/*   Updated: 2021/03/27 23:26:33 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/27 23:39:30 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ void	ft_check_type(const char **f)
 			**f == 'p' ||
 			**f == 'd' || **f == 'i' ||
 			**f == 'u' ||
-			**f == 'x' || **f == 'X' ||
-			**f == '\0')
+			**f == 'x' || **f == 'X')
 		g_flg.type = **f;
 }
 
@@ -41,4 +40,6 @@ void	ft_print_types(va_list ap)
 		ft_print_p((long long)va_arg(ap, void *));
 	else if (g_flg.type == 'd' || g_flg.type == 'i')
 		ft_print_d(va_arg(ap, int));
+	else
+		g_flg.ret_value = -1;
 }

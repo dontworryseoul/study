@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 19:25:18 by jso               #+#    #+#             */
-/*   Updated: 2021/03/27 23:03:01 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/28 00:04:45 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		ft_count_padding(long long num, int base_num)
 	if (!g_flg.prcs && !num)
 		--len;
 	return (len);
-	}
+}
 
 int		ft_count_d_padding(long long num, int base_num)
 {
@@ -59,12 +59,12 @@ int		ft_count_d_padding(long long num, int base_num)
 	while (wid_0_len > 0 && g_flg.zero && !g_flg.left && g_flg.prcs < 0)
 	{
 		--wid_0_len;
-		++cp_len;		
+		++cp_len;
 	}
 	if (!g_flg.prcs && !num)
 		--cp_len;
 	return (cp_len);
-	}
+}
 
 void	ft_print_recur(long long u_num, int n_base, char *base)
 {
@@ -82,6 +82,7 @@ void	ft_print_0_prcs(int len)
 void	ft_print_0_padding(int len)
 {
 	int cp_len;
+	
 	cp_len = len;
 	if (g_flg.left == 0 && g_flg.zero == 1 && g_flg.prcs < 0)
 	{
@@ -94,19 +95,20 @@ void	ft_comb_u(long long u_num, int n_base, char *base)
 {
 	int		len;
 	int		cp_len;
+	
 	if (base[16] == 'p')
 	{
 		ft_printf_putchar('0');
 		ft_printf_putchar('x');
 	}
 	if ((base[10] == 'd') && u_num < 0)
-		ft_printf_putchar('-');		
+		ft_printf_putchar('-');
 	len = ft_divide_num(u_num, n_base);
 	ft_print_0_prcs(len);
 	cp_len = g_flg.width - len;
 	if (u_num < 0)
 	{
-		--cp_len;		
+		--cp_len;
 		u_num *= -1;
 	}
 	ft_print_0_padding(cp_len);
@@ -135,8 +137,8 @@ void	ft_print_u(unsigned int u_num)
 
 void	ft_print_x(unsigned int x_num)
 {
-	char *base;
-	int len;
+	char	*base;
+	int		len;
 
 	if (g_flg.type == 'x')
 		base = "0123456789abcdef";
@@ -157,8 +159,8 @@ void	ft_print_x(unsigned int x_num)
 
 void	ft_print_p(long long p_num)
 {
-	char *base;
-	int len;
+	char	*base;
+	int		len;
 
 	base = "0123456789abcdefp";
 	len = ft_count_padding(p_num, 16) + 2;
@@ -176,9 +178,9 @@ void	ft_print_p(long long p_num)
 
 void	ft_print_d(int n_num)
 {
-	char *base;
-
-	int len;
+	char	*base;
+	int		len;
+	
 	base = "0123456789d";
 	len = ft_count_d_padding(n_num, 10);
 	if (g_flg.left)

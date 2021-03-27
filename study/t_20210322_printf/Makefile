@@ -6,7 +6,7 @@
 #    By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/22 07:11:42 by jso               #+#    #+#              #
-#    Updated: 2021/03/25 09:10:19 by jso              ###   ########.fr        #
+#    Updated: 2021/03/28 00:27:14 by jso              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,9 @@ MEM		= 	ft_printf.c		\
 			ft_printf_center.c	\
 			ft_printf_c_s_per.c	\
 			ft_printf_utils.c	\
-			ft_printf_d_u_x_p.c
+			ft_printf_d_u_x_p.c	\
+			ft_print_comb.c		\
+			ft_count_pad.c
 
 OBJ		=	$(MEM:.c=.o)
 

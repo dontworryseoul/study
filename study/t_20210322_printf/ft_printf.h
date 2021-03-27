@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 07:26:10 by jso               #+#    #+#             */
-/*   Updated: 2021/03/26 17:41:34 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/28 00:40:44 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
-# include <stdio.h>
 
-# define TEN	10
+# define TEN		10
+# define HEX		16
+# define ONE_BYTE	1
 
 typedef struct s_flgs
 {
@@ -50,15 +51,19 @@ void			ft_check_prcs(va_list ap, const char **fmt);
 void			ft_check_type(const char **f);
 void			ft_print_types(va_list ap);
 
+/* 
+**				The funcs in the ft_print_c_s_per.c file below
+*/
+
 void			ft_print_c(int ch);
-void			ft_print_percent(void);
 void			ft_print_s(char *str);
-void			ft_padding(int byte);
+void			ft_print_percent(void);
 
 /* 
 **				The funcs in the ft_printf_utils.c file below
 */
 
+void			ft_padding(int byte);
 void			ft_printf_putchar(int c);
 int				ft_strlen(const char *s);
 
@@ -67,14 +72,25 @@ int				ft_strlen(const char *s);
 */
 
 void			ft_print_u(unsigned int u_num);
-void			ft_comb_u(long long u_num, int n_base, char *base);
-void			ft_print_recur(long long u_num, int n_base, char *base);
-void			ft_print_0_prcs(int len);
-void			ft_print_0_padding(int len);
-int				ft_count_padding(long long num, int base_num);
-int				ft_divide_num(long long num, int base_num);
 void			ft_print_x(unsigned int x_num);
 void			ft_print_p(long long p_num);
 void			ft_print_d(int n_num);
+
+/* 
+**				The funcs in the ft_print_comb.c file below
+*/
+
+void			ft_print_0_prcs(int len);
+void			ft_print_0_padding(int len);
+void			ft_print_recur(long long u_num, int n_base, char *base);
+void			ft_comb_u(long long u_num, int n_base, char *base);
+
+/* 
+**				The funcs in the ft_count_pad.c file below
+*/
+
+int				ft_divide_num(long long num, int base_num);
+int				ft_count_padding(long long num, int base_num);
+int				ft_count_d_padding(long long num, int base_num);
 
 #endif

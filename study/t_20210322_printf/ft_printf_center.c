@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 08:26:02 by jso               #+#    #+#             */
-/*   Updated: 2021/03/25 19:36:42 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/26 17:17:07 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,6 @@ void	ft_print_types(va_list ap)
 		ft_print_x(va_arg(ap, unsigned int));
 	else if (g_flg.type == 'p')
 		ft_print_p((long long)va_arg(ap, void *));
+	else if (g_flg.type == 'd')
+		ft_print_d(va_arg(ap, int));
 }

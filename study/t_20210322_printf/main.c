@@ -3,22 +3,28 @@
 int main(void)
 {
 
-	unsigned int u_num1;
-	char *u_num;
 
-	//u_num1 = 0xFFFFFFFF;
+	//int u_num = 1 << 31;
+	//int u_num = -1;
+	int u_num = 1;
+
 //	u_num = 4294967161;
-	u_num = "hello";
 
+	ft_printf("%10d|14: ", u_num);
+	printf("\n");
+	printf("|%10d|14: ", u_num);
+	printf("\n");
+	printf("|1234567890|14: ");
+	printf("\n");
+	/*
 	printf("\n13: org\t|%-16.p|", &u_num);
 	ft_printf("\n\t|%-16.p|", &u_num);
 	ft_printf("\n\t|0123456789012345678901234567890");
 	ft_printf("\n");
-	/*
 	ft_printf("\n\t%.p", &u_num);
 	ft_printf("\n");
 	printf("\n18: org\t%-3.p", &u_num);
-	//printf("\n19: org\t%lld", &u_num);
+	printf("\n19: org\t%lld", &u_num);
 	ft_printf("\n");
 	ft_printf("\n%u", u_num);
 	ft_printf("\n%u", 0);

@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 19:25:18 by jso               #+#    #+#             */
-/*   Updated: 2021/03/26 13:32:02 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/26 17:50:35 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,5 +140,25 @@ void	ft_print_p(long long p_num)
 	{
 		ft_padding(len);
 		ft_comb_u(p_num, 16, base);
+	}
+}
+
+void	ft_print_d(int n_num)
+{
+	char *base;
+
+	int len;
+	base = "0123456789";
+	len = ft_count_padding(n_num, 10);
+	printf("\n153: %d", len);
+	if (g_flg.left)
+	{
+		ft_comb_u(n_num, 10, base);
+		ft_padding(len);
+	}
+	else
+	{
+		ft_padding(len);
+		ft_comb_u(n_num, 10, base);
 	}
 }

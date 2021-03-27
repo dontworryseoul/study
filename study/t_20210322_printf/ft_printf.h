@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 07:26:10 by jso               #+#    #+#             */
-/*   Updated: 2021/03/26 13:26:06 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/26 17:41:34 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,6 @@ int				ft_count_padding(long long num, int base_num);
 int				ft_divide_num(long long num, int base_num);
 void			ft_print_x(unsigned int x_num);
 void			ft_print_p(long long p_num);
+void			ft_print_d(int n_num);
 
 #endif

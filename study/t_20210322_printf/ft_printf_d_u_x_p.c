@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 19:25:18 by jso               #+#    #+#             */
-/*   Updated: 2021/03/28 01:19:51 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/28 01:27:06 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ void	ft_print_x(unsigned int x_num)
 	int		len;
 
 	if (g_flg.type == 'x')
-		base = "0123456789abcdef";
+		base = LOWER_X;
 	else
-		base = "0123456789ABCDEF";
+		base = UPPER_X;
 	len = ft_count_padding(x_num, HEX);
 	if (g_flg.left)
 	{
@@ -53,20 +53,18 @@ void	ft_print_x(unsigned int x_num)
 
 void	ft_print_p(long long p_num)
 {
-	char	*base;
 	int		len;
 
-	base = "0123456789abcdefp";
 	len = ft_count_padding(p_num, HEX) + 2;
 	if (g_flg.left)
 	{
-		ft_comb_u(p_num, HEX, base);
+		ft_comb_u(p_num, HEX, STR_POINT);
 		ft_padding(len);
 	}
 	else
 	{
 		ft_padding(len);
-		ft_comb_u(p_num, HEX, base);
+		ft_comb_u(p_num, HEX, STR_POINT);
 	}
 }
 

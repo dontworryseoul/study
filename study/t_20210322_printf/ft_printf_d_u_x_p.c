@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 19:25:18 by jso               #+#    #+#             */
-/*   Updated: 2021/03/28 00:38:42 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/28 01:13:13 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	ft_print_d(int n_num)
 	char	*base;
 	int		len;
 
-	base = "0123456789d";
+	base = "0123456789";
 	len = ft_count_d_padding(n_num, TEN);
 	if (g_flg.left)
 	{

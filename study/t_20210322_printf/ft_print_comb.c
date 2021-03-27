@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 00:23:37 by jso               #+#    #+#             */
-/*   Updated: 2021/03/28 00:44:19 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/28 01:13:07 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_comb_u(long long u_num, int n_base, char *base)
 		ft_printf_putchar('0');
 		ft_printf_putchar('x');
 	}
-	if ((base[10] == 'd') && u_num < 0)
+	if (u_num < 0)
 		ft_printf_putchar('-');
 	len = ft_divide_num(u_num, n_base);
 	ft_print_0_prcs(len);

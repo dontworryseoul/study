@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 08:39:55 by jso               #+#    #+#             */
-/*   Updated: 2021/03/25 12:08:50 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/27 23:56:13 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,19 +60,13 @@ void	ft_print_s(char *str)
 	if (g_flg.left)
 	{
 		while (len-- && str)
-		{
-			ft_printf_putchar(*str);
-			++str;
-		}
+			ft_printf_putchar(*str++);
 		ft_padding(cp_len);
 	}
 	else
 	{
 		ft_padding(cp_len);
 		while (len-- && str)
-		{
-			ft_printf_putchar(*str);
-			++str;
-		}
+			ft_printf_putchar(*str++);
 	}
 }

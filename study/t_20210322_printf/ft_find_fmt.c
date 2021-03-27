@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 07:37:35 by jso               #+#    #+#             */
-/*   Updated: 2021/03/25 14:45:59 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/27 23:28:57 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,11 @@ void	ft_find_fmt(va_list ap, const char *fmt)
 		}
 		else
 			ft_printf_putchar(*fmt);
+		if (g_flg.type == '\0')
+		{
+			g_flg.ret_value = -1;
+			return;
+		}
 		++fmt;
 	}
 }

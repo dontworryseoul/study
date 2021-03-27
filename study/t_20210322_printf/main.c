@@ -10,7 +10,7 @@ int main(void)
 	int ret;
 //	u_num = 4294967161;
 
-	ret = ft_printf("%-*.*d", -4, -4, u_num);
+	ret = ft_printf("%623-90854-305823489");
 	ft_printf("\n");
 	printf("\nret: %d", ret);
 	// printf("|%10d|14: ", u_num);

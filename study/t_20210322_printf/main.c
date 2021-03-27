@@ -6,16 +6,17 @@ int main(void)
 
 	//int u_num = 1 << 31;
 	//int u_num = -1;
-	int u_num = 1;
-
+	int u_num = -1;
+	int ret;
 //	u_num = 4294967161;
 
-	ft_printf("%10d|14: ", u_num);
-	printf("\n");
-	printf("|%10d|14: ", u_num);
-	printf("\n");
-	printf("|1234567890|14: ");
-	printf("\n");
+	ret = ft_printf("%10d", u_num);
+	ft_printf("\n");
+	printf("\nret: %d", ret);
+	// printf("|%10d|14: ", u_num);
+	// printf("\n");
+	// printf("|1234567890|14: ");
+	// printf("\n");
 	/*
 	printf("\n13: org\t|%-16.p|", &u_num);
 	ft_printf("\n\t|%-16.p|", &u_num);

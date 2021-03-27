@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 19:25:18 by jso               #+#    #+#             */
-/*   Updated: 2021/03/26 17:50:35 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/27 22:48:51 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,29 @@ int		ft_count_padding(long long num, int base_num)
 	return (len);
 	}
 
+int		ft_count_d_padding(long long num, int base_num)
+{
+	int	len;
+	int cp_len;
+	int wid_0_len;
+
+	len = ft_divide_num(num, base_num);
+	cp_len = len;
+	if (num < 0)
+		++cp_len;
+	wid_0_len = g_flg.width - cp_len;
+	while (g_flg.prcs > len++)
+		++cp_len;
+	while (wid_0_len > 0 && g_flg.zero && !g_flg.left && g_flg.prcs < 0)
+	{
+		--wid_0_len;
+		++cp_len;		
+	}
+	if (!g_flg.prcs && !num)
+		--len;
+	return (len);
+	}
+
 void	ft_print_recur(long long u_num, int n_base, char *base)
 {
 	if (u_num >= (unsigned int)n_base)
@@ -70,15 +93,23 @@ void	ft_print_0_padding(int len)
 void	ft_comb_u(long long u_num, int n_base, char *base)
 {
 	int		len;
-
+	int		cp_len;
 	if (base[16] == 'p')
 	{
 		ft_printf_putchar('0');
 		ft_printf_putchar('x');
 	}
+	if ((base[10] == 'd') && u_num < 0)
+		ft_printf_putchar('-');		
 	len = ft_divide_num(u_num, n_base);
 	ft_print_0_prcs(len);
-	ft_print_0_padding(g_flg.width - len);
+	cp_len = g_flg.width - len;
+	if (u_num < 0)
+	{
+		--cp_len;		
+		u_num *= -1;
+	}
+	ft_print_0_padding(cp_len);
 	if (!(g_flg.prcs == 0 && u_num == 0))
 		ft_print_recur(u_num, n_base, base);
 }
@@ -148,9 +179,8 @@ void	ft_print_d(int n_num)
 	char *base;
 
 	int len;
-	base = "0123456789";
-	len = ft_count_padding(n_num, 10);
-	printf("\n153: %d", len);
+	base = "0123456789d";
+	len = ft_count_d_padding(n_num, 10);
 	if (g_flg.left)
 	{
 		ft_comb_u(n_num, 10, base);

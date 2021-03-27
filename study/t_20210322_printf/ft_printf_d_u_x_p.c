@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 19:25:18 by jso               #+#    #+#             */
-/*   Updated: 2021/03/27 22:48:51 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/27 23:03:01 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,8 @@ int		ft_count_d_padding(long long num, int base_num)
 		++cp_len;		
 	}
 	if (!g_flg.prcs && !num)
-		--len;
-	return (len);
+		--cp_len;
+	return (cp_len);
 	}
 
 void	ft_print_recur(long long u_num, int n_base, char *base)

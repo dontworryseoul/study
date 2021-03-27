@@ -6,11 +6,11 @@ int main(void)
 
 	//int u_num = 1 << 31;
 	//int u_num = -1;
-	int u_num = -1;
+	int u_num = 198;
 	int ret;
 //	u_num = 4294967161;
 
-	ret = ft_printf("%10d", u_num);
+	ret = ft_printf("%-*.*d", -4, -4, u_num);
 	ft_printf("\n");
 	printf("\nret: %d", ret);
 	// printf("|%10d|14: ", u_num);

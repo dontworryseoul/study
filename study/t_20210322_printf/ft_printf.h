@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 07:26:10 by jso               #+#    #+#             */
-/*   Updated: 2021/03/28 00:52:23 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/28 01:18:53 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # define TEN		10
 # define HEX		16
 # define ONE_BYTE	1
+# define STR_DIGIT	"0123456789"
 
 typedef struct	s_flgs
 {

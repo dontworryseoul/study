@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 07:26:10 by jso               #+#    #+#             */
-/*   Updated: 2021/03/30 19:31:07 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/31 08:36:23 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void			ft_check_width(va_list ap, const char **fmt);
 void			ft_check_prcs(va_list ap, const char **fmt);
 
 /*
-**				The funcs in the ft_print_center.c file below
+**				The funcs in the ft_printf_center.c file below
 */
 
 void			ft_check_type(const char **f);

@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 00:23:37 by jso               #+#    #+#             */
-/*   Updated: 2021/03/30 12:32:23 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/30 17:12:57 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_comb_u(long long u_num, int n_base, char *base)
 	int		len;
 	int		cp_len;
 
-	if (base[16] == 'p')
+	if ('p' == g_flg.type)
 	{
 		ft_printf_putchar('0');
 		ft_printf_putchar('x');

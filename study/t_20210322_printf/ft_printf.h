@@ -6,12 +6,13 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 07:26:10 by jso               #+#    #+#             */
-/*   Updated: 2021/03/28 01:33:51 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/30 17:11:14 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
@@ -20,7 +21,7 @@
 # define HEX		16
 # define ONE_BYTE	1
 # define STR_DIGIT	"0123456789"
-# define STR_POINT	"0123456789abcdefp"
+# define STR_POINT	"0123456789abcdef"
 # define LOWER_X	"0123456789abcdef"
 # define UPPER_X	"0123456789ABCDEF"
 

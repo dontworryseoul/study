@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 07:26:10 by jso               #+#    #+#             */
-/*   Updated: 2021/03/30 17:11:14 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/30 19:31:07 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 # define HEX		16
 # define ONE_BYTE	1
 # define STR_DIGIT	"0123456789"
-# define STR_POINT	"0123456789abcdef"
 # define LOWER_X	"0123456789abcdef"
 # define UPPER_X	"0123456789ABCDEF"
 
@@ -54,7 +53,7 @@ void			ft_check_prcs(va_list ap, const char **fmt);
 */
 
 void			ft_check_type(const char **f);
-void			ft_print_types(va_list ap);
+void			ft_printf_center(va_list ap);
 
 /*
 **				The funcs in the ft_print_c_s_per.c file below

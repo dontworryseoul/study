@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 07:37:35 by jso               #+#    #+#             */
-/*   Updated: 2021/03/28 01:05:55 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/30 19:30:38 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	ft_find_fmt(va_list ap, const char *fmt)
 			ft_check_width(ap, &fmt);
 			ft_check_prcs(ap, &fmt);
 			ft_check_type(&fmt);
-			ft_print_types(ap);
+			ft_printf_center(ap);
 		}
 		else
 			ft_printf_putchar(*fmt);

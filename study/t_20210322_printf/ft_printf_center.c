@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 08:26:02 by jso               #+#    #+#             */
-/*   Updated: 2021/03/27 23:39:30 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/30 19:30:22 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_check_type(const char **f)
 		g_flg.type = **f;
 }
 
-void	ft_print_types(va_list ap)
+void	ft_printf_center(va_list ap)
 {
 	if (g_flg.type == 'c')
 		ft_print_c(va_arg(ap, int));

@@ -6,7 +6,7 @@
 /*   By: jso <jso@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 00:23:37 by jso               #+#    #+#             */
-/*   Updated: 2021/03/28 01:13:07 by jso              ###   ########.fr       */
+/*   Updated: 2021/03/30 12:32:23 by jso              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ void	ft_print_0_padding(int len)
 
 void	ft_print_recur(long long u_num, int n_base, char *base)
 {
-	if (u_num >= (unsigned int)n_base)
-		ft_print_recur(u_num / (unsigned int)n_base, n_base, base);
-	ft_printf_putchar(base[u_num % (unsigned int)n_base]);
+	if (u_num >= n_base)
+		ft_print_recur(u_num / n_base, n_base, base);
+	ft_printf_putchar(base[u_num % n_base]);
 }
 
 void	ft_comb_u(long long u_num, int n_base, char *base)
